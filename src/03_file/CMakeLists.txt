@@ -1,13 +1,7 @@
-set(CHAPTER_EXE
-    00_write
-    01_read
-    02_open_slow
-    03_open_fast
-    04_close
-    05_ioctl
-    06_lseek
-    07_fstat_stat_lstat
-)
-foreach(EXE ${CHAPTER_EXE})
-    add_executable(${EXE} ${EXE}.c)
+file(GLOB examples_01 ${CMAKE_CURRENT_LIST_DIR}/*)
+list(REMOVE_ITEM examples_01 ${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt)
+
+foreach(example_01 ${examples_01})
+    get_filename_component(exe ${example_01} NAME_WE)
+    add_executable(${exe} ${exe}.c)
 endforeach()

@@ -41,7 +41,7 @@ int main(int argc, char** argv)
     in = open("file.in", O_RDONLY);
     out = open("file.out", O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
 
-    while ()
+    // while ()
 
     return 0;
 }
